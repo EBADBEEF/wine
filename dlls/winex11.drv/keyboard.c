@@ -1876,10 +1876,6 @@ BOOL X11DRV_MappingNotify( HWND dummy, XEvent *event )
         NtUserPostMessage( hwnd, WM_INPUTLANGCHANGEREQUEST,
                            0 /*FIXME*/, (LPARAM)NtUserGetKeyboardLayout(0) );
         break;
-
-    case MappingPointer:
-        X11DRV_InitMouse( event->xmapping.display );
-        break;
     }
 
     return TRUE;
